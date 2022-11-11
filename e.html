@@ -1,0 +1,68 @@
+<html>
+<body>	
+
+<script src='moment.js' type='text/javascript'></script>
+<canvas id="myCanvas" width="1355" height="755"></canvas>
+
+<head>    
+	<title>Game</title>
+  <body bgcolor='black'>
+</head>
+<script>
+const canvas = document.getElementById('myCanvas');
+let ctx = canvas.getContext('2d')
+window.requestAnimationFrame(gameLoop);
+/*
+tue 22 nov-25
+
+
+
+dec 22 thur, fri dec 30
+
+
+*/
+
+function gameLoop(timeStamp) {
+	
+   ctx.fillStyle = '#000000';
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+   ctx.fillRect(0, 0, canvas.width,canvas.height);
+	let e =moment().format('LL');
+   ctx.fillStyle = '#FF0000';
+	ctx.font = "30px Arial";
+	ctx.fillText("Today is "+e, 20, 100);
+	
+	let r = moment("2022,11,22", "YYYYMMDD").fromNow()
+	ctx.fillText("Day off: "+r+" (November 22nd--25th)", 20, 250);//unknown
+	
+	let r2 = moment("2022,12,22", "YYYYMMDD").fromNow()
+	ctx.fillText("Day off: "+r2+" (December 22nd--30th)", 20, 300);//unknown
+	
+	let r3 = moment("2023,01,20", "YYYYMMDD").fromNow()
+	ctx.fillText("Day off: "+r3+" (January 20--23)", 20, 350);//unknown
+	
+	let r4 = moment("2023,02,24", "YYYYMMDD").fromNow()
+	ctx.fillText("Day off: "+r4+" (February 24--24)", 20, 400);//unknown
+
+	let r5 = moment("2023,03,20", "YYYYMMDD").fromNow()
+	ctx.fillText("Day off: "+r5+" (March 20--24)", 20, 450);//unknown
+	
+	let r6 = moment("2023,04,7", "YYYYMMDD").fromNow()
+	ctx.fillText("Day off: "+r6+" (April 7--7)", 20, 500);//unknown
+	
+	let r7 = moment("2023,04,28", "YYYYMMDD").fromNow()
+	ctx.fillText("Day off: "+r7+" (April 28--28)", 20, 550);//unknown
+	
+	let r9 = moment("2023,05,29", "YYYYMMDD").fromNow()
+	ctx.fillText("Day off: "+r9+" (May 29--29)", 20, 600);//unknown
+	
+	let lastDay = moment("2023,06,1", "YYYYMMDD").fromNow()
+	ctx.fillText("Last Day: "+lastDay+" (June 1)", 20, 650);//unknown
+	
+	let hsecmin=moment().format('LTS');
+	ctx.fillText(hsecmin,20,150)
+   window.requestAnimationFrame(gameLoop);
+}
+</script>
+	
+</body></html>
